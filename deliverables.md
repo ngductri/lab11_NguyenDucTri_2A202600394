@@ -1,13 +1,13 @@
 # Deliverables
 
-1.1 Tổng hợp Kết quả Kiểm tra Tự động (Automated Pipeline)
-Hệ thống đã thực hiện đánh giá dựa trên 11 kịch bản tấn công (bao gồm 5 dạng chuẩn, 3 dạng do AI tạo và 3 kỹ thuật nâng cao). Kết quả cho thấy sự khác biệt rõ rệt về hiệu năng bảo mật:
+1.1 Automated Testing Highlights
+Evaluation of 11 distinct attack scenarios (Standard, AI-Generated, and Advanced) yielded the following security outcomes:
 
-Trình trạng không bảo vệ (Unprotected): Hoàn toàn thất bại (0/11). Hệ thống bị rò rỉ toàn bộ thông tin nhạy cảm bao gồm System Prompt, mật khẩu quản trị (admin123) và các khóa API.
+Baseline (No Protection): 0% Block Rate. Critical data leakage (System Prompts, Admin PWs, API Keys) occurred in every test.
 
-ADK Guardrails: Hiệu quả hạn chế (2/11 - 18%). Mặc dù ngăn chặn được các hình thức tấn công điền vào chỗ trống (completion) hoặc kịch bản giả tưởng, nhưng vẫn "đầu hàng" trước các kỹ thuật dịch thuật và định dạng đầu ra.
+ADK Guardrails: 18% Block Rate. Successfully countered simple "fill-in-the-blank" and creative writing prompts but failed against advanced obfuscation like translation.
 
-NeMo Guardrails: Đạt độ an toàn tuyệt đối (11/11 - 100%). Bảo vệ thành công hệ thống trước mọi danh mục tấn công được thử nghiệm.
+NeMo Guardrails: 100% Block Rate. Delivered a robust defense, successfully thwarting all 11 attack attempts.
 
 1.2 # Kết quả Kiểm tra Bảo mật ADK Guardrail
 | ID | Attack Category | Before (Unprotected) | After (ADK Guardrail) | Improved? |
